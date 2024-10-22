@@ -43,3 +43,11 @@ function newFactorial(n) {
     return "something went wrong";
   }
 }
+DOMSelectors = { container: document.querySelector("container") };
+
+function createBox() {
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeend",
+    `<div id="container"><p>Hello World</p></div>`
+  );
+}

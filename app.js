@@ -35,17 +35,38 @@ console.log(getSpaces(5, "CC..C", "C.C.C")); */
 //start from leftmost digit - multiply the digit by the left digit + 1
 //use this product and continue
 
-function binaryDecimal(binary) {
+/* function binaryDecimal(binary) {
   let product = 0;
-  let adder = 1;
+  let adder = i;
   let decimalvalue = 1;
-  for (let i = binary.length - 1; i > 0; i--) {
+  for (let i = binary.length - 1; i >= 0; i--) {
     if (binary[i] == "1") {
       product = product + adder;
-      decimalvalue = product * 2 + adder;
     }
-    adder = decimalvalue;
+    decimalvalue = product * 2 + adder;
   }
   console.log(product);
 }
-binaryDecimal("00011");
+binaryDecimal("00011"); */
+
+/* function binaryDecimal(binary) {
+  let decimal = 0;
+  //x = binary.reverse
+  //option to reverse
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[binary.length - 1 - i] === "1") {
+      decimal = decimal + Math.pow(2, i);
+      //decimal = decimal + 2^0 -> ^1 etc etc;
+    }
+  }
+  return decimal;
+}
+console.log(binaryDecimal("1101")); */
+function decimalBinary(decimal, binary) {
+  for (let i = 0; i < binary.length; i++) {
+    let remainder = decimal % 2;
+    binary = remainder.toString();
+  }
+  return binary;
+}
+console.log(decimalBinary(8, ""));
